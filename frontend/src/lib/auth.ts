@@ -5,12 +5,25 @@ import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const {
+  handlers,
+  signIn,
+  signOut,
+  auth,
+} = NextAuth({
   providers: [
     Credentials({
+      name: "Credentials",
+
       credentials: {
-        email: {},
-        password: {},
+        email: {
+          label: "Email",
+          type: "email",
+        },
+        password: {
+          label: "Password",
+          type: "password",
+        },
       },
 
       async authorize(credentials) {
@@ -20,20 +33,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         await connectDB();
 
-        const user = await User.findOne({
-          email: String(credentials.email).toLowerCase(),
-        });
+        const email = String(credentials.email).toLowerCase().trim();
+
+        const user = await User.findOne({ email });
 
         if (!user) {
           return null;
         }
 
-        const passwordMatch = await bcrypt.compare(
+        const isValidPassword = await bcrypt.compare(
           String(credentials.password),
           user.password
         );
 
-        if (!passwordMatch) {
+        if (!isValidPassword) {
           return null;
         }
 
