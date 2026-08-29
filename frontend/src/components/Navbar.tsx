@@ -20,10 +20,35 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "About", href: "#about" },
+    { name: "Features", href: "#features" },
   ];
 
   useEffect(() => {
     if (pathname !== "/") return;
+
+    const handleScroll = () => {
+      const sections = ["how-it-works", "about", "features"];
+
+      let currentSection = "/";
+
+      for (const id of sections) {
+        const section = document.getElementById(id);
+
+        if (!section) continue;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 180 && rect.bottom > 180) {
+          currentSection = `#${id}`;
+        }
+      }
+
+      if (window.scrollY < 100) {
+        currentSection = "/";
+      }
+
+      setActiveSection(currentSection);
+    };
 
     const handleHashChange = () => {
       const hash = window.location.hash;
@@ -35,33 +60,14 @@ export default function Navbar() {
       }
     };
 
-    const handleScroll = () => {
-      const sections = ["how-it-works", "about"];
-
-      let currentSection = "/";
-
-      for (const id of sections) {
-        const section = document.getElementById(id);
-
-        if (!section) continue;
-
-        const rect = section.getBoundingClientRect();
-
-        if (rect.top <= 180 && rect.bottom >= 180) {
-          currentSection = `#${id}`;
-          break;
-        }
-      }
-
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("hashchange", handleHashChange);
+
+    handleScroll();
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, [pathname]);
 
@@ -75,8 +81,20 @@ export default function Navbar() {
         top: 0,
         behavior: "smooth",
       });
-    } else {
-      setActiveSection(href);
+
+      return;
+    }
+
+    setActiveSection(href);
+
+    const sectionId = href.replace("#", "");
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
@@ -85,7 +103,6 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl">
         <div className=" border border-white/10 bg-white/4 px-4 py-3 backdrop-blur-xl sm:px-5">
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <Link
               href="/"
               onClick={() => handleNavClick("/")}
@@ -103,7 +120,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1  border border-white/8 bg-black/50 p-1 backdrop-blur-md md:flex">
+            <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 p-1 md:flex">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href;
 
@@ -172,7 +189,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
               className="flex h-10 w-10 items-center justify-center border border-white/10 bg-black/60 text-white backdrop-blur-md transition hover:border-cyan-400/30 hover:text-cyan-400 md:hidden"
@@ -233,7 +249,6 @@ export default function Navbar() {
                       </motion.div>
                     );
                   })}
-
 
                   {/* Mobile Auth */}
                   <div className="p-2 pt-4">

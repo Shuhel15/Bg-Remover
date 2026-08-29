@@ -6,7 +6,10 @@ backend/__pycache__/
 # ONNX models
 *.onnx
 
-# Environment variables
+# Backend environment variables
+backend/.env
+
+# Frontend environment variables
 .env
 .env.local
 *.env

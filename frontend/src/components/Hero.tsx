@@ -15,9 +15,9 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
+          <p className="mb-6 flex items-center gap-3 text-xs font-semibold tracking-[0.25em] text-cyan-400">
             <span className="h-px w-8 bg-cyan-400" />
-            Background removal made simple
+            BACKGROUND REMOVAL MADE SIMPLE 
           </p>
 
           <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.055em] text-white sm:text-7xl lg:text-[78px]">
@@ -30,7 +30,7 @@ export default function Hero() {
 
           <p className="mt-7 max-w-lg text-base leading-7 text-white/45 sm:text-lg">
             Turn ordinary images into clean, transparent visuals. Upload an
-            image, remove the background, and get a ready-to-use result in
+            image, remove the background, add custom colors and get a ready-to-use result in
             seconds.
           </p>
 
