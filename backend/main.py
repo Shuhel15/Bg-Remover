@@ -1,9 +1,10 @@
 import os
+
 from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
-from rembg import remove
+from rembg import remove, new_session
 
 load_dotenv()
 
@@ -19,6 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+rembg_session = new_session("u2netp")
+
 
 @app.get("/")
 def root():
@@ -31,7 +34,10 @@ def root():
 async def remove_background(file: UploadFile = File(...)):
     input_image = await file.read()
 
-    output_image = remove(input_image)
+    output_image = remove(
+        input_image,
+        session=rembg_session
+    )
 
     return Response(
         content=output_image,
