@@ -1,6 +1,6 @@
 # ✂️ BG.REMOVER - AI-Powered Background Removal Web Application
 
-![BG.REMOVER Banner](./frontend/public/during.png)
+![BG.REMOVER Banner](./frontend/public/screenshorts/Home.png)
 
 <p align="center">
   <b>A modern, high-performance web application designed to strip image backgrounds automatically using AI. Built with Next.js 16, FastAPI, and <code>rembg</code>.</b>
@@ -27,22 +27,35 @@ The application features a sleek dark-themed, glassmorphic UI built with **Next.
 
 ## 🖼️ Application Screenshots & Previews
 
-### 1. Home / Landing Page
+### 1. Home / Landing Page Hero Section
 The landing page showcases a dynamic hero section with smooth floating image micro-animations and interactive call-to-actions.
 
-![Landing Page](./frontend/public/during.png)
+![Home Landing Page](./frontend/public/screenshorts/Home.png)
 
-### 2. Before vs After Background Removal
-Upload any image (PNG, JPG, WEBP) and convert it into a clean transparent PNG asset in seconds.
+### 2. How It Works Workflow
+Step-by-step workflow guiding users from uploading an image, removing the background, picking custom background colors, to downloading the finished asset.
 
-| Original Image | Background Removed Result |
-| :---: | :---: |
-| ![Original Image](./frontend/public/before.png) | ![Removed Background Result](./frontend/public/after.png) |
+![How It Works Section](./frontend/public/screenshorts/home2.png)
 
-### 3. About & Workflow Section
-Minimalist and clean layout highlighting the user experience and straightforward workflow.
+### 3. About Section
+Minimalist layout highlighting the design philosophy and straightforward user experience.
 
-![About Section](./frontend/public/about.png)
+![About Section](./frontend/public/screenshorts/home3.png)
+
+### 4. Application Features
+Grid showcasing core application capabilities including AI background removal, custom background color canvas, and instant PNG export.
+
+![Features Grid](./frontend/public/screenshorts/home4.png)
+
+### 5. Remove Background Workspace (Image Upload)
+Interactive upload interface where users select or drag-and-drop images before sending them to the FastAPI AI service.
+
+![Upload Workspace](./frontend/public/screenshorts/home5.png)
+
+### 6. Background Removal Result & Custom Background Color Canvas
+Real-time editor displaying the processed transparent image with a color picker canvas to change background colors and download high-resolution PNGs.
+
+![Result & Color Canvas Editor](./frontend/public/screenshorts/home6.png)
 
 ---
 
@@ -89,10 +102,13 @@ bg-remover/
 │
 ├── frontend/                 # Next.js 16 Frontend Web Application
 │   ├── public/               # Public Image Assets & Previews
-│   │   ├── about.png         # About Section Screenshot
-│   │   ├── after.png         # Removed Background Output Sample
-│   │   ├── before.png        # Original Image Sample
-│   │   └── during.png        # Main Hero Screenshot
+│   │   └── screenshorts/     # Application Screenshots
+│   │       ├── Home.png      # Hero Landing Page
+│   │       ├── home2.png     # How It Works Section
+│   │       ├── home3.png     # About Section
+│   │       ├── home4.png     # Features Grid
+│   │       ├── home5.png     # Upload Workspace Tool
+│   │       └── home6.png     # Result & Custom Color Editor Workspace
 │   ├── src/
 │   │   ├── app/              # Next.js App Router Routes
 │   │   │   ├── api/          # Next.js API Routes (NextAuth Authentication)
