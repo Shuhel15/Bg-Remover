@@ -50,7 +50,7 @@ export default function Hero() {
               href="#how-it-works"
               className="group flex items-center gap-2 border border-white/10 px-5 py-3.5 text-sm font-medium text-white/60 transition hover:border-white/20 hover:text-white active:scale-95"
             >
-              <Play size={14} className="fill-current" />
+              <Play size={14} className="fill-current group-hover:transition-transform group-hover:translate-x-1 duration-300" />
               See how it works
             </a>
           </div>

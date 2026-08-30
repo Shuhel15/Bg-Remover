@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  BadgeCheck,
-  ImagePlus,
-  Palette,
-  Sparkles,
-} from "lucide-react";
+import { BadgeCheck, Download, ImagePlus, Palette } from "lucide-react";
 
 const features = [
   {
@@ -28,10 +23,10 @@ const features = [
       "Choose from preset colors or pick your own custom color to give your image the perfect background.",
   },
   {
-    icon: Sparkles,
-    title: "Image Enhancement",
+    icon: Download,
+    title: "Easy Image Export",
     description:
-      "Enhance your images and make the final result cleaner, sharper, and ready to use.",
+      "Download your finished image with your selected background as a high-quality PNG file.",
   },
 ];
 
@@ -116,4 +111,3 @@ export default function Features() {
     </section>
   );
 }
-

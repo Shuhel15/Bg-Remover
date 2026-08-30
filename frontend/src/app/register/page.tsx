@@ -88,9 +88,9 @@ export default function RegisterPage() {
               transition={{ duration: 0.7 }}
               className="max-w-xl"
             >
-              <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
+              <p className="mb-6 flex items-center gap-3 text-xs font-semibold tracking-[0.25em] text-cyan-400">
                 <span className="h-px w-8 bg-cyan-400" />
-                Create your account
+                CREATE YOUR ACCOUNT
               </p>
 
               <h1 className="text-6xl font-black leading-[0.92] tracking-[-0.055em] xl:text-7xl">
@@ -135,8 +135,8 @@ export default function RegisterPage() {
                 Back to home
               </Link>
 
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
-                New account
+              <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                NEW ACCOUNT
               </p>
 
               <h2 className="text-4xl font-black tracking-[-0.04em]">

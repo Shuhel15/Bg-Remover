@@ -110,8 +110,8 @@ export default function LoginPage() {
                 Back to home
               </Link>
 
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
-                Account
+              <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                ACCOUNT
               </p>
 
               <h2 className="text-4xl font-black tracking-[-0.04em]">

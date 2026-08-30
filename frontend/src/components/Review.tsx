@@ -21,7 +21,7 @@ const reviews = [
     name: "Daniel Roy",
     role: "Freelancer",
     review:
-      "Exactly what I was looking for. Upload the image, remove the background , add background color , enhance image and download it.",
+      "Exactly what I was looking for. Upload the image, remove the background , add background color and download it.",
   },
   {
     name: "Rohan Sharma",

@@ -37,7 +37,7 @@ export default function HowItWorks() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           {/* Heading */}
           <div>
-            <p className="mb-5  gap-3 font-semibold  tracking-[0.25em] text-cyan-400">
+            <p className="mb-5 gap-3 text-xs font-semibold  tracking-[0.25em] text-cyan-400">
               HOW IT WORKS
             </p>
 
