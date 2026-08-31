@@ -24,7 +24,7 @@ export default function CTA() {
               starts <span className="text-white/35">here.</span>
             </h2>
             <p className="text-sm text-white/35 mt-4">
-              No credit card required. Start creating for free.
+              No credit card required. Start creating for free. Unlimited use.
             </p>
           </div>
 
